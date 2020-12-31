@@ -33,7 +33,7 @@ const BoxChart = (props) => {
     display: flex;
   `;
 
-  const { chart, revenue } = props;
+  const { chart, revenue, refresh } = props;
 
   return (
     <ContainerChart>
@@ -42,6 +42,9 @@ const BoxChart = (props) => {
           <Button>День</Button>
           <Button>Неделя</Button>
           <Button>Месяц</Button>
+          <div onClick={refresh}>
+            <Button>Refresh</Button>
+          </div>
         </Buttons>
         <Card size={Size.big}>
           <CardHead>
