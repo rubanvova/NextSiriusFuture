@@ -106,7 +106,7 @@ const Home: React.FC = () => {
             <Search />
             <User></User>
           </Header>
-          <Button />
+          {/* <Button /> */}
           <BoxChart chart={chart} revenue={revenue} />
           <ContainerCard>
             <Card size={Size.litle}>

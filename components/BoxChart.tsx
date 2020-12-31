@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import Card from './Card';
 import Chart from './Chart';
 import Image from 'next/image';
+import Button from './Button';
 
 const BoxChart = (props) => {
   const ContainerChart = styled.div`
@@ -28,34 +29,52 @@ const BoxChart = (props) => {
     margin: 20px 0px 0px 20px;
   `;
 
+  const Buttons = styled.div`
+    display: flex;
+  `;
+
   const { chart, revenue } = props;
 
   return (
     <ContainerChart>
-      <Card size={Size.big}>
-        <CardHead>
-          <div>
-            <Proceeds>Выручка:</Proceeds>
-            <Total>{revenue} руб.</Total>
-          </div>
-          <BoxImage>
-            <Image src="/yandex.png" alt="" width={120} height={32} />
-          </BoxImage>
-        </CardHead>
-        <Chart data={chart} />
-      </Card>
-      <Card size={Size.big}>
-        <CardHead>
-          <div>
-            <Proceeds>Выручка:</Proceeds>
-            <Total>{revenue} руб.</Total>
-          </div>
-          <BoxImage>
-            <Image src="/paypal.png" alt="" width={120} height={32} />
-          </BoxImage>
-        </CardHead>
-        <Chart data={chart} />
-      </Card>
+      <div>
+        <Buttons>
+          <Button>День</Button>
+          <Button>Неделя</Button>
+          <Button>Месяц</Button>
+        </Buttons>
+        <Card size={Size.big}>
+          <CardHead>
+            <div>
+              <Proceeds>Выручка:</Proceeds>
+              <Total>{revenue} руб.</Total>
+            </div>
+            <BoxImage>
+              <Image src="/yandex.png" alt="" width={120} height={32} />
+            </BoxImage>
+          </CardHead>
+          <Chart data={chart} />
+        </Card>
+      </div>
+      <div>
+        <Buttons>
+          <Button>День</Button>
+          <Button>Неделя</Button>
+          <Button>Месяц</Button>
+        </Buttons>
+        <Card size={Size.big}>
+          <CardHead>
+            <div>
+              <Proceeds>Выручка:</Proceeds>
+              <Total>{revenue} руб.</Total>
+            </div>
+            <BoxImage>
+              <Image src="/paypal.png" alt="" width={120} height={32} />
+            </BoxImage>
+          </CardHead>
+          <Chart data={chart} />
+        </Card>
+      </div>
     </ContainerChart>
   );
 };

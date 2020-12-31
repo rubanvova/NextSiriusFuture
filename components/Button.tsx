@@ -2,7 +2,7 @@ import React from 'react';
 
 import styled from '@emotion/styled';
 
-const Button = () => {
+const Button = ({ children }) => {
   const Container = styled.div`
     display: flex;
   `;
@@ -22,14 +22,7 @@ const Button = () => {
 
   return (
     <Container>
-      <Button>День</Button>
-      <Button>неделя</Button>
-      <Button>Месяц</Button>
-      <Container style={{ marginLeft: '390px' }}>
-        <Button>День</Button>
-        <Button>неделя</Button>
-        <Button>Месяц</Button>
-      </Container>
+      <Button>{children}</Button>
     </Container>
   );
 };
